@@ -15,37 +15,37 @@
 int main(void) {
     /* Insert DDR and PORT initializations */
     DDRA = 0x00; PORTA = 0xFF;
-    DDRB = 0xFF; PORTB = 0x00;
+    DDRB = 0xFF; PORTC = 0x00;
     unsigned char tmpA = 0x00;
-    unsigned char tmpB = 0x00;
+    unsigned char tmpC = 0x00;
     /* Insert your solution below */
     while (1) {
 	//button = PINA & 0x01;
 	tmpA = PINA & 0x0F;
-	tmpB = 0x00;
+	tmpC = 0x00;
 	if(tmpA < 3) {
-	    tmpB = tmpB | 0x20;
+	    tmpC = tmpC | 0x20;
 	}
 	else if(tmpA < 5) {
-	    tmpB = tmpB | 0x30;
+	    tmpC = tmpC | 0x30;
 	}
 	else if(tmpA < 7) {
-	    tmpB = tmpB | 0x38;
+	    tmpC = tmpC | 0x38;
 	}
 	else if(tmpA < 10) {
-	    tmpB = tmpB | 0x3C;
+	    tmpC = tmpC | 0x3C;
 	}
 	else if(tmpA < 13) {
-	    tmpB = tmpB | 0x3E;
+	    tmpC = tmpC | 0x3E;
 	}
 	else if(tmpA < 16) {
-	    tmpB = tmpB | 0x3F;
+	    tmpC = tmpC | 0x3F;
 	}
 	if(tmpA < 5) {
-	    tmpB = tmpB | 0x40;
+	    tmpC = tmpC | 0x40;
 	}
 
-	PORTB = tmpB;
+	PORTC = tmpC;
     }
     return 1;
 }
