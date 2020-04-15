@@ -26,13 +26,13 @@ int main(void) {
 	temp = (PIND << 1) | (PINB & 0x01);
 	fin = PINB & 0x01;
 	if(temp >= 70) {
-	    fin = fin | 0x02;
+	    fin = 0x02;
 	}
 	else if(temp > 5) {
-	    fin = (fin | 0x04) & 0x05;
+	    fin = 0x04;
 	}
 	else {
-	    fin = fin & 0x01;
+	    fin = 0x00;
 	}
 	
 	PORTB = fin;

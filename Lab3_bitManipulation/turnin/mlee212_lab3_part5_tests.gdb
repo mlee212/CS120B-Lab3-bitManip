@@ -40,18 +40,18 @@ echo Running all tests..."\n\n
 
 # Add tests below
 
-test "PINB: 0x01, PIND: 0x03 => PORTB: 0x05"
+test "PINB: 0x01, PIND: 0xFF => PORTB: 0x02"
 setPINB 0x01
-setPIND 0x03
+setPIND 0xFF
 continue 5
-expectPORTB 0x05
+expectPORTB 0x02
 checkResult
 
-test "PINB: 0x01, PIND: 0x3F => PORTB: 0x03"
+test "PINB: 0x01, PIND: 0x05 => PORTB: 0x04"
 setPINB 0x01
-setPIND 0x3F
+setPIND 0x05
 continue 5
-expectPORTB 0x03
+expectPORTB 0x04
 checkResult
 
 # Report on how many tests passed/tests ran
