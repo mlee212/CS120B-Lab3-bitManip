@@ -23,7 +23,10 @@ int main(void) {
 	//button = PINA & 0x01;
 	tmpA = PINA & 0x0F;
 	tmpC = 0x00;
-	if(tmpA < 3) {
+	if(tmpA == 0){
+	    tmpC = 0x00;
+	}
+	else if(tmpA < 3) {
 	    tmpC = tmpC | 0x20;
 	}
 	else if(tmpA < 5) {
